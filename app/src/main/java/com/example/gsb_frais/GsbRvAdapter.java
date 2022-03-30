@@ -10,14 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class GsbRvAdapter extends RecyclerView.Adapter<GsbRvAdapter.ViewHolder>  {
     private List<Praticien> dateModelList;
 
 
-    public GsbRvAdapter(List<Praticien> dateModelList) {
+    public GsbRvAdapter(ArrayList<Praticien> dateModelList) {
         this.dateModelList = dateModelList;
     }
 
@@ -35,7 +35,8 @@ public class GsbRvAdapter extends RecyclerView.Adapter<GsbRvAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        holder.nomTv.setText(String.valueOf(dateModelList.get(position).getPra_nom()));
+        holder.prenomTv.setText(String.valueOf(dateModelList.get(position).getPra_prenom()));
     }
 
     @Override
@@ -46,10 +47,12 @@ public class GsbRvAdapter extends RecyclerView.Adapter<GsbRvAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-
+        private TextView nomTv, prenomTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            nomTv = itemView.findViewById(R.id.nom);
+            prenomTv = itemView.findViewById(R.id.prenom);
         }
     }
 }

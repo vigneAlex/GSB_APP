@@ -17,8 +17,5 @@ public class Visiteurs implements Serializable {
         return visiteurs;
     }
 
-    public int count(){
-        return getVisiteurs().size();
-    }
 }
 

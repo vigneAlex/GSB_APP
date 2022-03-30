@@ -15,12 +15,24 @@ public class Praticien {
     private String pra_mail;
     @SerializedName("pra_rue")
     private String pra_rue;
-    @SerializedName("pra_code_postal")
+    @SerializedName("pra_codePostal")
     private String pra_code_postal;
     @SerializedName("pra_ville")
     private String pra_ville;
     @SerializedName("pra_coef_notoriete")
     private int pra_coef_notoriete;
+
+    public Praticien(int id, String pra_nom, String pra_prenom, String pra_tel, String pra_mail, String pra_rue, String pra_code_postal, String pra_ville, int pra_coef_notoriete) {
+        this.id = id;
+        this.pra_nom = pra_nom;
+        this.pra_prenom = pra_prenom;
+        this.pra_tel = pra_tel;
+        this.pra_mail = pra_mail;
+        this.pra_rue = pra_rue;
+        this.pra_code_postal = pra_code_postal;
+        this.pra_ville = pra_ville;
+        this.pra_coef_notoriete = pra_coef_notoriete;
+    }
 
     public int getId() {
         return id;
