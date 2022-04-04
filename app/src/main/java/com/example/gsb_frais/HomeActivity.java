@@ -2,6 +2,7 @@ package com.example.gsb_frais;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -56,7 +57,16 @@ public class HomeActivity extends AppCompatActivity {
                                 public void onResponse(Call<Praticien> call, Response<Praticien> response) {
                                     Praticien praticien = response.body();
                                     leVisiteur.add(praticien);
-
+                                    if (leVisiteur != null){
+                                        if (leVisiteur.getLesPraticiens().size() == leVisiteur.getPraticien().size()){
+                                            binding.rvPraticiens.setHasFixedSize(true);
+                                            LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+                                            binding.rvPraticiens.setLayoutManager(layoutManager);
+                                            binding.rvPraticiens.setFocusable(false);
+                                            GsbRvAdapter myAdapterWeather = new GsbRvAdapter(leVisiteur.getLesPraticiens());
+                                            binding.rvPraticiens.setAdapter(myAdapterWeather);
+                                        }
+                                    }
                                 }
 
                                 @Override
@@ -66,26 +76,25 @@ public class HomeActivity extends AppCompatActivity {
                             });
                         }
                     }
-                    if (leVisiteur != null){
-                        if (leVisiteur.getLesPraticiens() != null){
-                            binding.rvPraticiens.setHasFixedSize(true);
-                            LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
-                            binding.rvPraticiens.setLayoutManager(layoutManager);
-                            binding.rvPraticiens.setFocusable(false);
-                            GsbRvAdapter myAdapterWeather = new GsbRvAdapter(leVisiteur.getLesPraticiens());
-                            binding.rvPraticiens.setAdapter(myAdapterWeather);
-                        }
-                        else {
-                            Toast.makeText(HomeActivity.this, "pas bon", Toast.LENGTH_LONG).show();
-                        }
-                    }
+
                 }
             }
             @Override
             public void onFailure(Call<Visiteurs> call, Throwable t) {
                 Toast.makeText(HomeActivity.this, "Something went wrong...Please try later!", Toast.LENGTH_SHORT).show();
+
             }
         });
-
+        binding.rvPraticiens.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), binding.rvPraticiens, new RecyclerViewClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Intent praticien = new Intent(HomeActivity.this, PraticienActivity.class);
+                Praticien lePraticien = leVisiteur.getLesPraticiens().get(position);
+                praticien.putExtra("praticien", lePraticien);
+                praticien.putExtra("token", token);
+                startActivity(praticien);
+            }
+        }) {
+        });
     }
 }

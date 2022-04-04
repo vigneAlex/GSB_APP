@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gsb_frais"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CreateVisiteurActivity"></activity>
+        <activity android:name=".PraticienActivity"></activity>
+        <activity android:name=".CreateVisiteurActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

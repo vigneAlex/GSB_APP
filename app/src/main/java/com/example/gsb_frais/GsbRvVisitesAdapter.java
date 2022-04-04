@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class GsbRvAdapter extends RecyclerView.Adapter<GsbRvAdapter.ViewHolder>  {
-    private ArrayList<Praticien> dateModelList;
+public class GsbRvVisitesAdapter extends RecyclerView.Adapter<GsbRvVisitesAdapter.ViewHolder>  {
+    private ArrayList<Visites> dateModelList;
 
 
-    public GsbRvAdapter(ArrayList<Praticien> dateModelList) {
+    public GsbRvVisitesAdapter(ArrayList<Visites> dateModelList) {
         this.dateModelList = dateModelList;
     }
 
@@ -27,15 +27,16 @@ public class GsbRvAdapter extends RecyclerView.Adapter<GsbRvAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ViewHolder viewHolder;
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_items, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_visites, parent, false);
         viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.nomTv.setText(String.valueOf(dateModelList.get(position).getPra_nom()));
-        holder.prenomTv.setText(String.valueOf(dateModelList.get(position).getPra_prenom()));
+        holder.dateTv.setText(String.valueOf(dateModelList.get(position).getDate()));
+        holder.motifTv.setText(String.valueOf(dateModelList.get(position).getMotif()));
+        holder.commentaireTv.setText(String.valueOf(dateModelList.get(position).getCommentaire()));
     }
 
     @Override
@@ -46,12 +47,13 @@ public class GsbRvAdapter extends RecyclerView.Adapter<GsbRvAdapter.ViewHolder> 
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView nomTv, prenomTv;
+        private TextView dateTv, motifTv, commentaireTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            nomTv = itemView.findViewById(R.id.nom);
-            prenomTv = itemView.findViewById(R.id.prenom);
+            dateTv = itemView.findViewById(R.id.date);
+            motifTv = itemView.findViewById(R.id.motif);
+            commentaireTv = itemView.findViewById(R.id.commentaire);
         }
     }
 }
