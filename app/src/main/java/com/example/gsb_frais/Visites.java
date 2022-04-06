@@ -3,6 +3,7 @@ package com.example.gsb_frais;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Visites implements Serializable {
@@ -18,6 +19,9 @@ public class Visites implements Serializable {
     private String motif;
     @SerializedName("vstVisiteur")
     private String visiteur;
+
+    private Motif leMotif;
+
 
     public int getId() {
         return id;
@@ -41,5 +45,13 @@ public class Visites implements Serializable {
 
     public String getVisiteur() {
         return visiteur;
+    }
+
+    public Motif getLeMotif() {
+        return leMotif;
+    }
+
+    public void setLeMotif(Motif leMotif) {
+        this.leMotif = leMotif;
     }
 }

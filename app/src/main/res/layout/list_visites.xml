@@ -20,18 +20,19 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="20dp"
+            android:textSize="10dp"
             android:textColor="@color/black"
             android:text="date"/>
 
-        <TextView
-            android:id="@+id/motif"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="20dp"
-            android:text="motif"
-            android:textColor="@color/black" />
+<!--        <TextView-->
+<!--            android:id="@+id/motif"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:text="motif"-->
+<!--            android:textColor="@color/black" />-->
         <TextView
             android:id="@+id/commentaire"
             android:layout_width="wrap_content"

@@ -20,6 +20,9 @@ public interface GsbServices {
     @GET("/api/visites/{id}")
     Call<Visites> getVisites(@Header("Authorization") String authorization, @Path("id") int id);
 
+    @GET("/api/motifs/{id}")
+    Call<Motif> getMotifs(@Header("Authorization") String authorization, @Path("id") int id);
+
     @POST("/api/login_check")
     Call<Token> getToken(@Body Visiteur visiteur);
 

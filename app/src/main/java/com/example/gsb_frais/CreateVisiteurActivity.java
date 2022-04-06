@@ -22,7 +22,8 @@ public class CreateVisiteurActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityCreateVisiteurBinding.inflate(getLayoutInflater());
-        setContentView(R.layout.activity_create_visiteur);
+        View view = binding.getRoot();
+        setContentView(view);
 
         binding.btnEnvoyer.setOnClickListener(new View.OnClickListener() {
             @Override

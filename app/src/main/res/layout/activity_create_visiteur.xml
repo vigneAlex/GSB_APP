@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginLeft="60dp"
-    android:layout_marginRight="60dp"
     android:layout_gravity="center"
     tools:context=".CreateVisiteurActivity">
 
@@ -14,11 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:src="@drawable/logo_gsb"/>
 
     <EditText
         android:id="@+id/ed_nom"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nom"/>
@@ -26,6 +28,8 @@
     <EditText
         android:id="@+id/ed_prenom"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Prenom"/>
@@ -33,6 +37,8 @@
     <EditText
         android:id="@+id/ed_mail"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Adresse mail"/>
@@ -40,6 +46,8 @@
     <EditText
         android:id="@+id/ed_mdp"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
@@ -48,6 +56,8 @@
     <EditText
         android:id="@+id/ed_confirmMdp"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
@@ -56,13 +66,17 @@
     <EditText
         android:id="@+id/ed_tel"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Téléphone"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_envoyer"
+        android:id="@+id/btnEnvoyer"
         android:layout_marginTop="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
         android:background="@drawable/rounded"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
