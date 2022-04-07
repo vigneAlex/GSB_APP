@@ -54,16 +54,6 @@
         android:hint="Mot de passe"/>
 
     <EditText
-        android:id="@+id/ed_confirmMdp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="Confirmer mot de passe"/>
-
-    <EditText
         android:id="@+id/ed_tel"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="60dp"
